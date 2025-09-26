@@ -18,10 +18,10 @@ def query_model():
     response = requests.post(URL, json=payload)
     response.raise_for_status()
 
-    print(response.json()["choices"][0]["message"]["content"])
+    return response.json()["choices"][0]["message"]["content"]
 
 def main():
-    query_model()
+    print(query_model())
 
 if __name__ == "__main__":
     main()
